@@ -1,0 +1,21 @@
+{
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "moduleFileExtensions": ["ts", "js", "json"],
+  "testMatch": ["<rootDir>/test/**/*.e2e-spec.ts"],
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "collectCoverageFrom": [
+    "<rootDir>/src/**/*.{ts,js}",
+    "!<rootDir>/src/main.ts",
+    "!<rootDir>/src/config/**",
+    "!<rootDir>/src/modules/health/**",
+    "!<rootDir>/src/utils/bootstrap.utils.ts",
+    "!<rootDir>/src/**/*.module.ts",
+    "!<rootDir>/src/**/*.spec.ts"
+  ],
+  "coverageDirectory": "<rootDir>/coverage-e2e",
+  "coverageReporters": ["text", "lcov", "html"],
+  "testTimeout": 30000
+}

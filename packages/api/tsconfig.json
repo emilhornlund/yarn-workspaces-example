@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    /* Targets */
+    "target": "ES2023",
+
+    /* Modules & Resolution */
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "resolvePackageJsonExports": true,
+
+    /* Decorators (NestJS) */
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+
+    /* Interop & ergonomics */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+
+    /* Emit */
+    "outDir": "./dist",
+    "declaration": true,
+    "sourceMap": true,
+
+    /* Paths */
+    "baseUrl": "./",
+
+    /* Strictness & checks */
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "noFallthroughCasesInSwitch": false,
+
+    /* Tooling / Build info */
+    "incremental": true
+  }
+}

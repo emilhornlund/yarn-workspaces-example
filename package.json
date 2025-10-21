@@ -1,0 +1,47 @@
+{
+  "name": "yarn-workspaces-example",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Emil Hörnlund <emil.hornlund@me.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "yarn workspace @app/common run build && concurrently \"yarn workspace @app/api run build\" \"yarn workspace @app/web run build\"",
+    "build:common": "yarn workspace @app/common run build",
+    "build:api": "yarn workspace @app/api run build",
+    "build:web": "yarn workspace @app/web run build",
+    "dev": "concurrently \"yarn workspace @app/api run start:dev\" \"yarn workspace @app/web run dev\"",
+    "dev:api": "yarn workspace @app/api run start:dev",
+    "dev:web": "yarn workspace @app/web run dev",
+    "lint": "concurrently \"yarn workspace @app/common run lint\" \"yarn workspace @app/api run lint\" \"yarn workspace @app/web run lint\"",
+    "lint:fix": "concurrently \"yarn workspace @app/common run lint:fix\" \"yarn workspace @app/api run lint:fix\" \"yarn workspace @app/web run lint:fix\"",
+    "test:common": "yarn workspace @app/common run test",
+    "test:api": "yarn workspace @app/api run test",
+    "test:web": "yarn workspace @app/web run test",
+    "test:common:cov": "yarn workspace @app/common run test:cov",
+    "test:api:cov": "yarn workspace @app/api run test:cov",
+    "test:web:cov": "yarn workspace @app/web run test:cov",
+    "e2e:api": "yarn workspace @app/api run test:e2e",
+    "e2e:web": "yarn workspace @app/web run test:e2e",
+    "e2e:api:cov": "yarn workspace @app/api run test:e2e:cov",
+    "clean": "concurrently \"yarn workspace @app/common run clean\" \"yarn workspace @app/api run clean\" \"yarn workspace @app/web run clean\""
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.38.0",
+    "@types/node": "^22.10.7",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^16.4.0",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.6.0",
+    "typescript-eslint": "^8.46.1"
+  }
+}

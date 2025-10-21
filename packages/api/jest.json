@@ -1,0 +1,22 @@
+{
+  "rootDir": "src",
+  "testEnvironment": "node",
+  "moduleFileExtensions": ["ts", "js", "json"],
+  "testRegex": ".*\\.spec\\.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "collectCoverageFrom": [
+    "<rootDir>/**/*.{ts,js}",
+    "!<rootDir>/main.ts",
+    "!<rootDir>/config/**",
+    "!<rootDir>/modules/health/**",
+    "!<rootDir>/utils/bootstrap.utils.ts",
+    "!<rootDir>/**/index.ts",
+    "!<rootDir>/**/*.module.ts",
+    "!<rootDir>/**/*.spec.ts"
+  ],
+  "coverageDirectory": "../coverage",
+  "coverageReporters": ["text", "lcov", "html"],
+  "testTimeout": 30000
+}
